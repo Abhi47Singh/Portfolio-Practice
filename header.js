@@ -1,10 +1,11 @@
 const menu = document.getElementById("burger")
 const hdr = document.getElementsByClassName("hdR")[0]
+const headerLinks = document.querySelectorAll(".hdR a")
 let srcChange = false
-menu.addEventListener("click", (e) => {
+const handleMenuBtn = () => {
     const linkArr = [
-        "images/media/hamburger.png",
-        "images/media/close.png"
+        "/images/media/hamburger.png",
+        "/images/media/close.png"
     ]
     hdr.classList.toggle("open")
     if (!srcChange) {
@@ -14,46 +15,58 @@ menu.addEventListener("click", (e) => {
         menu.src = linkArr[0]
         srcChange = !srcChange
     }
-})
 
-var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+}
+
+headerLinks.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        if (hdr.classList.contains("open")) {   // Check if open
+            handleMenuBtn();
+            enableScroll();   // Enable scroll if necessary
+        }
+    });
+});
+
+
+
+var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
 function preventDefault(e) {
-  e.preventDefault();
+    e.preventDefault();
 }
 
 function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
 }
 
 // modern Chrome requires { passive: false } when adding event
 var supportsPassive = false;
 try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; } 
-  }));
-} catch(e) {}
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function () { supportsPassive = true; }
+    }));
+} catch (e) { }
 
 var wheelOpt = supportsPassive ? { passive: false } : false;
 var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
 // call this to Disable
 function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
 // call this to Enable
 function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
 // Disable scroll on mouseenter
