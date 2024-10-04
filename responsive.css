@@ -27,6 +27,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+          gap: 3vw;
     }
 
     .project-container .pro-card:nth-of-type(odd) .p1-container {
@@ -35,6 +36,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+          gap: 3vw;
     }
 
     .project-container .pro-card .tech {
