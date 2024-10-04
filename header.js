@@ -4,8 +4,8 @@ const headerLinks = document.querySelectorAll(".hdR a")
 let srcChange = false
 const handleMenuBtn = () => {
     const linkArr = [
-        "/images/media/hamburger.png",
-        "/images/media/close.png"
+        "images/media/hamburger.png",
+        "images/media/close.png"
     ]
     hdr.classList.toggle("open")
     if (!srcChange) {
