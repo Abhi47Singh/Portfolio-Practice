@@ -1,0 +1,209 @@
+/* *screen 900 - 600* */
+/* project section */
+@media screen and (width < 900px) {
+    .project-container .pro-card {
+        width: 80%;
+    }
+
+    .project-container .pro-card:nth-of-type(even) {
+        margin-right: 0;
+        align-self: center;
+    }
+
+    .project-container .pro-card .p1-text h1 {
+        font-size: 2em;
+        width: 100%;
+    }
+
+    .project-container .pro-card .p1-text p {
+        font-size: 0.7em;
+        width: 100%;
+    }
+
+    .project-container .pro-card:nth-of-type(even) .p1-container {
+        padding-left: 30%;
+        padding-right: 8%;
+    }
+
+    .project-container .pro-card:nth-of-type(odd) .p1-container {
+        padding-right: 30%;
+    }
+
+    .project-container .pro-card .tech {
+        display: flex;
+        justify-content: start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .project-container .pro-card .tech img {
+        height: 100%;
+        width: 35px;
+    }
+
+    .project-container .pro-card .tech-btn button {
+        font-size: 1em;
+    }
+
+    .project-container .pro-card .tech-btn img {
+        width: 35px;
+    }
+}
+
+/* ** */
+/* skill section */
+@media screen and (width < 950px) {
+    .skill-section {
+        flex-wrap: wrap;
+    }
+
+    .skill-right-part div {
+        width: 100% !important;
+    }
+
+    .skill-pera-1 {
+        font-size: 3rem !important;
+    }
+}
+
+/* ** */
+/* contact section */
+@media screen and (width < 900px) {
+    .contect-section .cform {
+        padding: 40px 10%;
+    }
+
+    .contect-section .cform input {
+        width: 100%;
+        padding: 2%;
+    }
+
+    .contect-section .cform textarea {
+        width: 100%;
+    }
+
+    #msg-btn {
+        margin-left: 0;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .contect-section h2 {
+        font-size: 7vw;
+    }
+
+    .contect-section h4 {
+        font-size: 3vw;
+    }
+
+    .contect-section .cText {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* *for screen size less than 600* */
+@media screen and (width <=600px) {
+
+    .pro-section #heading {
+        font-size: 5vw !important;
+        margin-bottom: 40px;
+    }
+
+    .project-container {
+        padding: 0 10% !important;
+        gap: 40px !important;
+    }
+
+    .project-container .pro-card {
+        width: 100% !important;
+        height: max-content !important;
+    }
+
+    .project-container .p1-container {
+        padding: 5% 10% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .p1-text h1 {
+        font-size: 1.5em !important;
+    }
+
+    .p1-text p {
+        font-size: 0.6em !important;
+    }
+
+    .project-container img {
+        width: 25px !important;
+    }
+
+    .tech-btn button {
+        font-size: 0.7em !important;
+    }
+
+    /* * header * */
+
+    .wrapper header {
+        justify-content: space-around;
+        padding: 0 20px;
+    }
+
+    header .hdL {
+        justify-content: start;
+        width: 80%;
+    }
+
+    header .hdR {
+        position: absolute;
+        flex-direction: column;
+        background-image: linear-gradient(to left, #e73939, #f2437c, #e464b7, #c387e2, #9aa4f9);
+        top: -1%;
+        height: 100vh;
+        width: 0;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.8s ease-in-out;
+    }
+    
+    header .open {
+        transition: width 0.3s ease-in-out;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+    }
+
+    
+
+    .hdR a {
+        font-size: 1.5rem !important;
+    }
+
+    header .hdR a::after {
+        content: "";
+        border-bottom: 3px solid rgb(255, 255, 255);
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        transition: width 0.3s ease-in;
+    }
+
+    .hdR a:hover::after {
+        width: 100%;
+    }
+
+    .hdR a:hover::before {
+        width: 0;
+    }
+
+    #burger {
+        display: block;
+        z-index: 1;
+    }
+
+}
+
+/** header section **/

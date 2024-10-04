@@ -1,0 +1,37 @@
+.tech-btn button {
+    position: relative;
+    border: none;
+    font-size: 1.2vw;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.5s ease-in-out;
+    cursor: url("pointer-28.png"), pointer;
+    text-align: center;
+}
+
+.tech-btn button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: var(--y);
+    left: var(--x);
+    border-radius: 50%;
+    background-color: rgb(231, 57, 57);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.tech-btn button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.tech-btn button:hover {
+    color: white;
+}
