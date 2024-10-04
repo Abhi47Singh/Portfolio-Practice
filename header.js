@@ -3,8 +3,8 @@ const hdr = document.getElementsByClassName("hdR")[0]
 let srcChange = false
 menu.addEventListener("click", (e) => {
     const linkArr = [
-        "/Portfolio WebSite/images/media/hamburger.png",
-        "/Portfolio WebSite/images/media/close.png"
+        "/images/media/hamburger.png",
+        "/images/media/close.png"
     ]
     hdr.classList.toggle("open")
     if (!srcChange) {
