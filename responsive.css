@@ -23,10 +23,18 @@
     .project-container .pro-card:nth-of-type(even) .p1-container {
         padding-left: 30%;
         padding-right: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .project-container .pro-card:nth-of-type(odd) .p1-container {
         padding-right: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .project-container .pro-card .tech {
